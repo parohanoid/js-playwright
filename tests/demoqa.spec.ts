@@ -64,7 +64,7 @@ test('test', async ({ page }) => {
     await page.locator('#subjectsInput').press('Tab');
 
     await page.getByText('Reading').check();
-    await page.getByRole('button', { name: 'Select picture' }).setInputFiles(path.join(__dirname, "sample.txt"));
+    await page.getByRole('button', { name: 'Select picture' }).setInputFiles(path.join(__dirname, "../sample.txt"));
     await page.getByRole('textbox', { name: 'Current Address' }).fill('test5256');
     await page.locator('#state svg').click();
     await page.getByText('Uttar Pradesh', { exact: true }).click();
