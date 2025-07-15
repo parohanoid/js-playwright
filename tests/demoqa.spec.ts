@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import path from 'path';
 
 // locators
 // locator('#frame2').contentFrame().getByRole('heading', { name: 'This is a sample page' })
@@ -63,7 +64,7 @@ test('test', async ({ page }) => {
     await page.locator('#subjectsInput').press('Tab');
 
     await page.getByText('Reading').check();
-    await page.getByRole('button', { name: 'Select picture' }).setInputFiles("/home/alfred/projects/ui_test_suite/requirements.txt");
+    await page.getByRole('button', { name: 'Select picture' }).setInputFiles(path.join(__dirname, "sample.txt"));
     await page.getByRole('textbox', { name: 'Current Address' }).fill('test5256');
     await page.locator('#state svg').click();
     await page.getByText('Uttar Pradesh', { exact: true }).click();
